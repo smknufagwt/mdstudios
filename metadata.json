@@ -1,0 +1,7 @@
+{
+  "name": "mdstudio",
+  "description": "Lightweight Markdown interpreter and editor with Local, Google Drive, and GitHub workspace integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

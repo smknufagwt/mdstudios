@@ -1,0 +1,17 @@
+marked 12.0.2 (MIT)
+# License information
+
+## Contribution License Agreement
+
+If you contribute code to this project, you are implicitly allowing your code
+
+dompurify 3.1.6 (Apache-2.0 OR MPL-2.0)
+
+highlight.js 11.10.0 (BSD-3-Clause)
+BSD 3-Clause License
+
+Copyright (c) 2006, Ivan Sagalaev.
+
+js-yaml 4.1.0 (MIT)
+Copyright (C) 2011-2015 by Vitaly Puzrin
+

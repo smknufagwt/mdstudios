@@ -1,0 +1,34 @@
+.pv-light pre code.hljs{display:block;overflow-x:auto;padding:1em}
+.pv-light code.hljs{padding:3px 5px}
+.pv-light .hljs{color:#24292e;background:#fff}
+.pv-light .hljs-doctag,.pv-light .hljs-keyword,.pv-light .hljs-meta .hljs-keyword,.pv-light .hljs-template-tag,.pv-light .hljs-template-variable,.pv-light .hljs-type,.pv-light .hljs-variable.language_{color:#d73a49}
+.pv-light .hljs-title,.pv-light .hljs-title.class_,.pv-light .hljs-title.class_.inherited__,.pv-light .hljs-title.function_{color:#6f42c1}
+.pv-light .hljs-attr,.pv-light .hljs-attribute,.pv-light .hljs-literal,.pv-light .hljs-meta,.pv-light .hljs-number,.pv-light .hljs-operator,.pv-light .hljs-selector-attr,.pv-light .hljs-selector-class,.pv-light .hljs-selector-id,.pv-light .hljs-variable{color:#005cc5}
+.pv-light .hljs-meta .hljs-string,.pv-light .hljs-regexp,.pv-light .hljs-string{color:#032f62}
+.pv-light .hljs-built_in,.pv-light .hljs-symbol{color:#e36209}
+.pv-light .hljs-code,.pv-light .hljs-comment,.pv-light .hljs-formula{color:#6a737d}
+.pv-light .hljs-name,.pv-light .hljs-quote,.pv-light .hljs-selector-pseudo,.pv-light .hljs-selector-tag{color:#22863a}
+.pv-light .hljs-subst{color:#24292e}
+.pv-light .hljs-section{color:#005cc5;font-weight:700}
+.pv-light .hljs-bullet{color:#735c0f}
+.pv-light .hljs-emphasis{color:#24292e;font-style:italic}
+.pv-light .hljs-strong{color:#24292e;font-weight:700}
+.pv-light .hljs-addition{color:#22863a;background-color:#f0fff4}
+.pv-light .hljs-deletion{color:#b31d28;background-color:#ffeef0}
+.pv-dark pre code.hljs{display:block;overflow-x:auto;padding:1em}
+.pv-dark code.hljs{padding:3px 5px}
+.pv-dark .hljs{color:#c9d1d9;background:#0d1117}
+.pv-dark .hljs-doctag,.pv-dark .hljs-keyword,.pv-dark .hljs-meta .hljs-keyword,.pv-dark .hljs-template-tag,.pv-dark .hljs-template-variable,.pv-dark .hljs-type,.pv-dark .hljs-variable.language_{color:#ff7b72}
+.pv-dark .hljs-title,.pv-dark .hljs-title.class_,.pv-dark .hljs-title.class_.inherited__,.pv-dark .hljs-title.function_{color:#d2a8ff}
+.pv-dark .hljs-attr,.pv-dark .hljs-attribute,.pv-dark .hljs-literal,.pv-dark .hljs-meta,.pv-dark .hljs-number,.pv-dark .hljs-operator,.pv-dark .hljs-selector-attr,.pv-dark .hljs-selector-class,.pv-dark .hljs-selector-id,.pv-dark .hljs-variable{color:#79c0ff}
+.pv-dark .hljs-meta .hljs-string,.pv-dark .hljs-regexp,.pv-dark .hljs-string{color:#a5d6ff}
+.pv-dark .hljs-built_in,.pv-dark .hljs-symbol{color:#ffa657}
+.pv-dark .hljs-code,.pv-dark .hljs-comment,.pv-dark .hljs-formula{color:#8b949e}
+.pv-dark .hljs-name,.pv-dark .hljs-quote,.pv-dark .hljs-selector-pseudo,.pv-dark .hljs-selector-tag{color:#7ee787}
+.pv-dark .hljs-subst{color:#c9d1d9}
+.pv-dark .hljs-section{color:#1f6feb;font-weight:700}
+.pv-dark .hljs-bullet{color:#f2cc60}
+.pv-dark .hljs-emphasis{color:#c9d1d9;font-style:italic}
+.pv-dark .hljs-strong{color:#c9d1d9;font-weight:700}
+.pv-dark .hljs-addition{color:#aff5b4;background-color:#033a16}
+.pv-dark .hljs-deletion{color:#ffdcd7;background-color:#67060c}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mdstudio</title>
+<meta name="description" content="Lightweight Markdown interpreter and editor with Local, Google Drive, and GitHub workspace integration.">
+<meta property="og:title" content="mdstudio">
+<meta property="og:description" content="Lightweight Markdown interpreter and editor with Local, Google Drive, and GitHub workspace integration.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/hljs.css">
+<script defer src="assets/vendor/marked.umd.js"></script>
+<script defer src="assets/vendor/purify.min.js"></script>
+<script defer src="assets/vendor/highlight.min.js"></script>
+<script defer src="assets/vendor/js-yaml.min.js"></script>
+<script defer src="https://accounts.google.com/gsi/client"></script>
+<script defer src="https://apis.google.com/js/api.js"></script>
+<script defer src="assets/js/i18n.js"></script>
+<script defer src="assets/js/app.js"></script>
+</head>
+<body>
+<header class="bar">
+  <div class="brand">mdstudio</div>
+  <button class="btn only-s" id="btn-tree" type="button" data-i18n="tree.title"></button>
+  <div class="group" id="modes" role="group" data-i18n-label="mode.label">
+    <button class="btn" type="button" data-mode="editor" data-i18n="mode.editor"></button>
+    <button class="btn" type="button" data-mode="split" data-i18n="mode.split"></button>
+    <button class="btn" type="button" data-mode="preview" data-i18n="mode.preview"></button>
+  </div>
+  <form class="gh-form" id="gh-form" role="search">
+    <input class="gh-input" id="gh-input" type="text" data-i18n-label="gh.paste" placeholder="user/repo or link" autocomplete="off" spellcheck="false">
+    <button class="btn" type="submit" id="btn-gh-clone" data-i18n="gh.load"></button>
+  </form>
+  <span class="rate-badge" id="rate-badge"></span>
+  <div class="group">
+    <button class="btn" type="button" id="btn-copy" data-i18n="act.copy" title="Copy markdown to clipboard"></button>
+    <button class="btn" type="button" id="btn-push" data-i18n="act.push" hidden></button>
+    <button class="btn" type="button" id="btn-compile" data-i18n="act.compile"></button>
+    <button class="btn" type="button" id="btn-ro" data-i18n="act.readonly"></button>
+    <button class="btn" type="button" id="btn-new" data-i18n="act.new"></button>
+    <button class="btn" type="button" id="btn-open" data-i18n="act.open"></button>
+    <button class="btn" type="button" id="btn-folder" data-i18n="act.folder"></button>
+    <button class="btn" type="button" id="btn-picker" data-i18n="act.picker" title="Google Drive Picker"></button>
+    <button class="btn" type="button" id="btn-drive" data-i18n="act.drive"></button>
+    <button class="btn" type="button" id="btn-todrive" data-i18n="act.todrive"></button>
+    <span class="sync" id="sync" role="status"></span>
+    <button class="btn" type="button" id="btn-auto" aria-pressed="true" data-i18n="act.auto"></button>
+    <button class="btn" type="button" id="btn-save" data-i18n="act.save"></button>
+    <button class="btn" type="button" id="btn-theme" data-i18n="act.theme"></button>
+    <button class="btn" type="button" id="btn-lang" data-i18n-label="act.lang"></button>
+  </div>
+</header>
+<div class="app" id="app" data-mode="split" data-kind="none">
+  <aside class="side">
+    <div class="side-h" data-i18n="tree.title"></div>
+    <nav id="tree" data-i18n-label="tree.title"></nav>
+    <div id="dwrap" hidden>
+      <div class="side-h"><span data-i18n="act.drive"></span> <button class="btn" type="button" id="btn-glogout" data-i18n="act.logout"></button></div>
+      <nav id="dtree" data-i18n-label="act.drive"></nav>
+    </div>
+  </aside>
+  <main class="work">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <p class="empty" data-i18n="empty"></p>
+    <div class="panes">
+      <section class="editor">
+        <div class="codewrap pv-dark" id="wrap">
+          <pre class="hl" id="hl" aria-hidden="true"><code class="hljs"></code></pre>
+          <textarea class="ta" id="ta" spellcheck="false" autocapitalize="off" autocomplete="off" data-i18n-label="editor.label"></textarea>
+        </div>
+      </section>
+      <section class="preview pv-dark" id="pv" data-i18n-label="preview.label">
+        <article class="md layout-narrow" id="doc"></article>
+      </section>
+    </div>
+  </main>
+</div>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+<input type="file" id="file-in" multiple hidden>
+
+<div class="modal-overlay" id="compile-modal" hidden>
+  <div class="modal">
+    <div class="modal-head">
+      <span data-i18n="compile.title">Web Sandbox Preview</span>
+      <button class="btn" type="button" id="btn-close-compile" data-i18n="modal.close">Close</button>
+    </div>
+    <div class="modal-body">
+      <iframe class="modal-iframe" id="compile-frame" sandbox="allow-scripts allow-forms" title="Web Sandbox"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="prompt-modal" hidden>
+  <form class="prompt-dialog" id="prompt-form">
+    <h3 id="prompt-title"></h3>
+    <p id="prompt-desc"></p>
+    <input type="text" id="prompt-val" autocomplete="off" spellcheck="false">
+    <div class="prompt-actions">
+      <button class="btn" type="button" id="prompt-cancel" data-i18n="modal.close">Close</button>
+      <button class="btn" type="submit" id="prompt-ok">OK</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
+
