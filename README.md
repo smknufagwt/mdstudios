@@ -5,6 +5,10 @@
 Write Markdown, preview it live, organize local files, connect Google Drive, and inspect or commit to GitHub repositories—all from a browser-based editor with no build step.
 
 > **Project status:** Stages 1 (Local workspace, editor/preview, front matter), 2 (Google Drive GIS token model & conflict detection), and 3 (GitHub source, tree clone, lazy loading, atomic commit/push, sandbox web preview) are implemented.
+---
+| ```This site is complete versions clone from``` |
+| --- |
+|*[arlingkin/mdstudios](https://github.com/arlingkin/mdstudio)* |
 
 ## Overview
 
